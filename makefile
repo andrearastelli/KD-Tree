@@ -4,8 +4,10 @@ TARGET = main
 
 all: $(TARGET)
 
-$(TARGET): $(TARGET).cpp
+$(TARGET): ./src/$(TARGET).cpp
+	mkdir ./bin/
 	$(CC) $(CFLAGS) -o ./bin/$(TARGET) ./src/$(TARGET).cpp
 
 clean:
 	$(RM) ./bin/$(TARGET)
+	$(RM) -rf ./bin
